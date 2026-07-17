@@ -1,0 +1,57 @@
+# Pages CMS configuration for fuwari blog
+# Docs: https://pagescms.org/docs
+# After pushing this repo to GitHub and connecting it at https://pagescms.org,
+# open the admin UI to create/edit posts visually — no code required.
+
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: posts
+    label: 文章
+    type: collection
+    path: src/content/posts
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      sort: published
+      order: desc
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: published
+        label: 发布日期
+        type: date
+        required: true
+      - name: updated
+        label: 更新日期
+        type: date
+      - name: draft
+        label: 草稿（true 则不进生产构建）
+        type: boolean
+        default: false
+      - name: description
+        label: 摘要
+        type: text
+      - name: image
+        label: 封面图路径
+        type: string
+        description: 例如 /images/cover.png（放在 public/images 下），留空则无封面
+      - name: tags
+        label: 标签
+        type: list
+        of: string
+      - name: category
+        label: 分类
+        type: string
+      - name: lang
+        label: 语言
+        type: string
+        description: 留空表示跟随站点默认语言
+      - name: body
+        label: 正文
+        type: rich-text
