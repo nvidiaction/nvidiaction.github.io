@@ -106,9 +106,10 @@ export const giscusConfig = {
 
 /** 访问统计配置（支持 Umami / Plausible）
  * 启用后将脚本注入站点 head。
- * enable: true 后需要提供 scriptSrc（统计服务的完整脚本 URL）
+ * enable: true 后需提供 src 和 websiteId。
  */
 export const analyticsConfig = {
-	enable: false,
-	scriptSrc: "", // 例: "https://umami.example.com/script.js" data-website-id="xxx"
+	enable: true,
+	src: "https://cloud.umami.is/script.js",
+	websiteId: "ffe850a4-fbde-4260-b80c-7a87c2ea3309",
 };

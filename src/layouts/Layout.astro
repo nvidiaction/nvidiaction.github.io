@@ -148,7 +148,7 @@ const bannerOffset =
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
 
 		<!-- 访问统计（Umami / Plausible 等），启用见 src/config.ts analyticsConfig -->
-		{analyticsConfig.enable && <script src={analyticsConfig.scriptSrc} defer></script>}
+		{analyticsConfig.enable && <script src={analyticsConfig.src} data-website-id={analyticsConfig.websiteId} defer></script>}
 
 	</head>
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
