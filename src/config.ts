@@ -59,7 +59,7 @@ export const profileConfig: ProfileConfig = {
 	links: [
 		{
 			name: "Bilibili",
-			icon: "simple-icons:bilibili",
+			icon: "fa6-solid:link",
 			url: "https://space.bilibili.com/646378987",
 		},
 		{
