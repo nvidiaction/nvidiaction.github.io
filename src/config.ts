@@ -97,9 +97,9 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
  */
 export const giscusConfig = {
 	repo: "nvidiaction/nvidiaction.github.io",
-	repoId: "TODO_请访问_giscus.app_获取", // 替换为实际值的值
+	repoId: "R_kgDOTb-J6A",
 	category: "Announcements",
-	categoryId: "TODO_请访问_giscus.app_获取", // 替换为实际值的值
+	categoryId: "DIC_kwDOTb-J6M4DBa-B",
 	mapping: "pathname",
 	lang: "zh-CN",
 };
