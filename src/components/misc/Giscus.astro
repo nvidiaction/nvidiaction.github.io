@@ -1,0 +1,47 @@
+---
+/**
+ * Giscus 评论组件
+ * 使用前需要：
+ * 1. 在 GitHub 仓库启用 Discussions（Settings → Features → Discussions ✅）
+ * 2. 访问 https://giscus.app 填入仓库名，获取 repoId / categoryId
+ * 3. 将获取的值填入 src/config.ts 的 giscusConfig
+ *
+ * 组件只在所有必要字段都已配置时才渲染。
+ */
+import { giscusConfig } from "../../config";
+
+const { repo, repoId, category, categoryId, mapping, lang } = giscusConfig;
+const enabled = !!(repo && repoId && category && categoryId);
+---
+
+{
+  enabled && (
+    <div class="mt-8 pt-6 border-t border-[var(--line-divider)]">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo={repo}
+        data-repo-id={repoId}
+        data-category={category}
+        data-category-id={categoryId}
+        data-mapping={mapping || "pathname"}
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang={lang || "zh-CN"}
+        crossorigin="anonymous"
+        async
+      ></script>
+    </div>
+  )
+}
+
+{
+  !enabled && (
+    <div class="mt-8 pt-6 border-t border-[var(--line-divider)] text-center text-neutral-400 text-sm">
+      💬 评论功能待配置。<br/>
+      <span class="text-xs">（需在 GitHub 仓库启用 Discussions 并配置 Giscus）</span>
+    </div>
+  )
+}

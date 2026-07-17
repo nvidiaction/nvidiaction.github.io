@@ -88,3 +88,27 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	// Please select a dark theme, as this blog theme currently only supports dark background color
 	theme: "github-dark",
 };
+
+/** Giscus 评论系统配置
+ * 使用前：
+ * 1. 在 GitHub 仓库启用 Discussions（Settings → Features → Discussions ✅）
+ * 2. 访问 https://giscus.app 填入仓库名，获取 repoId 和 categoryId
+ * 3. 将获取的值填入下方对应字段
+ */
+export const giscusConfig = {
+	repo: "nvidiaction/nvidiaction.github.io",
+	repoId: "TODO_请访问_giscus.app_获取", // 替换为实际值的值
+	category: "Announcements",
+	categoryId: "TODO_请访问_giscus.app_获取", // 替换为实际值的值
+	mapping: "pathname",
+	lang: "zh-CN",
+};
+
+/** 访问统计配置（支持 Umami / Plausible）
+ * 启用后将脚本注入站点 head。
+ * enable: true 后需要提供 scriptSrc（统计服务的完整脚本 URL）
+ */
+export const analyticsConfig = {
+	enable: false,
+	scriptSrc: "", // 例: "https://umami.example.com/script.js" data-website-id="xxx"
+};
